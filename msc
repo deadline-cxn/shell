@@ -1,0 +1,5 @@
+
+sshfs -p 2222 dminds1@defectiveminds.com:/home/dminds1/public_html/sethcoder.com/ /home/parson/sites/sethcoder.com
+
+
+

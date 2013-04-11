@@ -1,0 +1,20 @@
+echo " useful commands:"
+echo " ==================================="
+echo "sudo service x stop start restart status"
+echo "ps -aux (list all processes)"
+echo "ls -l (list all long style)"
+
+echo " sudo  dpkg-query -Wf  '${Installed-Size} \t ${Package} \n' | sort -n "
+
+echo "config locations:"
+echo "===================================="
+echo "~/zc"
+echo "/files (link to /var/www/zpanel... blah blah../public_html/files"
+echo "/var/www "
+
+echo "shell commands:"
+echo "===================================="
+ls /home/parson/shell
+
+
+

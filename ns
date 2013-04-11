@@ -1,0 +1,4 @@
+echo Gathering network connection information, please wait.
+netstat -a > netstat
+more netstat
+

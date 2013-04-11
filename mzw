@@ -1,0 +1,2 @@
+sshfs parson@zerowing.local:/ ~/sites/zerowing
+
