@@ -1,5 +1,0 @@
-## mkdir /mnt/3dnetlabs.info
-sshfs parson@galaxian.3dnetlabs.info:/ /home/parson/sites/galaxian.3dnetlabs.info/
-
-
-
