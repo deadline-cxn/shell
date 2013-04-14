@@ -1,3 +1,2 @@
 mkdir ~/sites/raspberrypi
 sshfs parson@raspberrypi:/ ~/sites/raspberrypi
-

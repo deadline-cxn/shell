@@ -1,6 +1,2 @@
-sshfs -p 2222 dminds1@defectiveminds.com:/home/dminds1/public_html /home/parson/sites/defectiveminds.com
-
-
-
-
-
+mkdir ~/sites/defectiveminds.com
+sshfs -p 2222 dminds1@defectiveminds.com:/home/dminds1/public_html ~/sites/defectiveminds.com

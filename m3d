@@ -1,8 +1,2 @@
-## mkdir /mnt/3dnetlabs.info
-sshfs parson@3dnetlabs.info:/ /home/parson/sites/3dnetlabs.info
-
-
-
-
-
-
+mkdir ~/sites/3dnetlabs.info
+sshfs parson@3dnetlabs.info:/ ~/sites/3dnetlabs.info
