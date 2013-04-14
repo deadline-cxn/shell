@@ -1,0 +1,3 @@
+git commit -a
+git push $1
+
