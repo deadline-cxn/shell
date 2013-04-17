@@ -1,2 +1,4 @@
+mkdir ~/sites/zerowing > /dev/null
 sshfs parson@zerowing.local:/ ~/sites/zerowing
+
 

@@ -1,2 +1,2 @@
-mkdir ~/sites/area56.sethcoder.com
+mkdir ~/sites/area56.sethcoder.com > /dev/null
 sshfs parson@area56.sethcoder.com:/var/www ~/sites/area56.sethcoder.com/

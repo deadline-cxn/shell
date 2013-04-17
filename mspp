@@ -1,2 +1,2 @@
-mkdir ~/sites/sarahparsonphotography.com
+mkdir ~/sites/sarahparsonphotography.com > /dev/null
 sshfs -p 2222 dminds1@defectiveminds.com:/home/dminds1/public_html/sarahparsonphotography.com ~/sites/sarahparsonphotography.com
