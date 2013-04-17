@@ -1,2 +1,2 @@
-mkdir ~/sites/3dnetlabs.info > /dev/null
+mkdir ~/sites/3dnetlabs.info
 sshfs parson@3dnetlabs.info:/ ~/sites/3dnetlabs.info
