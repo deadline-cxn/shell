@@ -2,6 +2,7 @@
 # Convert filenames to lowercase
 # and replace characters recursively
 #####################################
+
 if [ -z $1 ];then echo Give target directory; exit 0;fi
 find "$1" -depth -name '*' | while read file ; do
         directory=$(dirname "$file")
