@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 mkdir ~/sites/zerowing > /dev/null
 sshfs parson@zerowing.local:/ ~/sites/zerowing
+=======
+mkdir ~/sites/zerowing
+sshfs parson@10.1.10.31:/ ~/sites/zerowing
+
+>>>>>>> 6becb2226571f2ab12b5e96f1b8e2b38105fccf4
 
 
