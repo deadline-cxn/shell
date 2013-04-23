@@ -1,7 +1,2 @@
 git commit -a -m "$1"
 git push github
-<<<<<<< HEAD
-=======
-
->>>>>>> b9c073ef70c2861d5e467c5716c758d4865eb8dc
-
