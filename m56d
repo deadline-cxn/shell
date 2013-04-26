@@ -1,0 +1,3 @@
+mkdir ~/sites/area56.sethcoder.com > /dev/null
+sshfs parson@area56.sethcoder.com:/home/parson ~/sites/area56.sethcoder.com/
+
