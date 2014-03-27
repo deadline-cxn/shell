@@ -1,0 +1,3 @@
+mkdir ~/sites/rfscms.org
+sshfs -p 2222 sethcode@rfscms.org:/ ~/sites/rfscms.org
+
