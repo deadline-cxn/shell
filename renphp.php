@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?
 $dirfiles = array();
 $dir=getcwd();
@@ -10,8 +11,7 @@ reset($dirfiles);
 
 foreach($dirfiles as $k => $v) {
 	if(!(is_dir($v))) {
-		for($i=0;$i<26;$i++)
-			$nname.=chr((rand()%26)+65);
+		for($i=0;$i<26;$i++) $nname.=chr((rand()%26)+65);
 		$nname=$v.$nname.$v;
 		echo "$nname, $v\n";
 		rename($dir."/".$v, $dir."/".$nname);

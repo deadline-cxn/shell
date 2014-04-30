@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import random
 guesses_made = 0
 number = random.randint(1, 20)
