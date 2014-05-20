@@ -2,12 +2,16 @@ echo 'Installing packages'
 sudo apt-get update
 sudo apt-get install p7zip-full
 sudo add-apt-repository ppa:otto-kesselgulasch/gimp
-sudo apt-key adv --fetch-keys http://www.codelite.co.uk/CodeLite.asc
-sudo echo 'deb http://www.codelite.co.uk/ubuntu/ precise universe' >> /etc/apt/sources.list
-sudo echo 'deb-src http://www.codelite.co.uk/ubuntu/ precise universe' >> /etc/apt/sources.list
+sudo apt-key adv --fetch-keys http://repos.codelite.org/CodeLite.asc
+sudo echo 'deb  http://repos.codelite.org/ubuntu/ precise universe' >> /etc/apt/sources.list
 sudo wget -q http://www.webmin.com/jcameron-key.asc
 sudo apt-key add jcameron-key.asc
+sudo echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | tee /etc/apt/sources.list.d/webupd8team-java.list
+sudo echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | tee -a /etc/apt/sources.list.d/webupd8team-java.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
 sudo apt-get update
+sudo apt-get install oracle-java7-installer -y
 sudo apt-get install abiword -y
 sudo apt-get install accountsservice -y
 sudo apt-get install ace-of-penguins -y
@@ -107,6 +111,7 @@ sudo apt-get install nmap -y
 sudo apt-get install ntfs-3g -y
 sudo apt-get install p7zip-full -y
 sudo apt-get install p7zip -y
+sudp apt-get install pev -y
 sudo apt-get install php5 -y
 sudo apt-get install php5-gd -y
 sudo apt-get install putty-tools -y
@@ -121,6 +126,8 @@ sudo apt-get install tftp -y
 sudo apt-get install transmission -y
 sudo apt-get install unp -y
 sudo apt-get install unrar -y
+sudo apt-get install undms -y
+sudo apt-get install unace -y
 sudo apt-get install unzip -y
 sudo apt-get install vinagre -y
 sudo apt-get install virtualbox -y
@@ -130,6 +137,7 @@ sudo apt-get install webalizer -y
 sudo apt-get install webmin -y
 sudo apt-get install wine -y
 sudo apt-get install wireshark -y
+sudo apt-get install wkhtmltopdf
 sudo apt-get install xscreensaver-data -y
 sudo apt-get install xscreensaver-gl -y
 sudo apt-get install xscreensaver -y
