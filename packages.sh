@@ -12,6 +12,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
 sudo apt-get update
 sudo apt-get install oracle-java7-installer -y
+sudo apt-get install oracle-java7-set-default -y
 sudo apt-get install abiword -y
 sudo apt-get install accountsservice -y
 sudo apt-get install ace-of-penguins -y
