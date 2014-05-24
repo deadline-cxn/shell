@@ -1,2 +1,0 @@
-mkdir ~/sites/3dnetlabs.info
-sshfs parson@3dnetlabs.info:/var/www ~/sites/3dnetlabs.info

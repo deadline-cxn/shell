@@ -1,3 +1,0 @@
-mkdir ~/sites/nova
-sshfs parson@nova:/ ~/sites/nova/
-

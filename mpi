@@ -1,2 +1,0 @@
-mkdir ~/sites/raspberrypi > /dev/null
-sshfs parson@raspberrypi:/ ~/sites/raspberrypi

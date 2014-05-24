@@ -1,5 +1,8 @@
-mkdir ~/sites/$1
-sshfs parson@$1:/ ~/sites/$1
+user=parson
+site=$1
+
+mkdir ~/sites/$site
+sshfs $user@$site:/ ~/sites/$site
 
 
 
