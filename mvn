@@ -1,0 +1,5 @@
+mkdir ~/sites/vendetta
+sshfs parson@vendetta:/ ~/sites/vendetta
+
+
+

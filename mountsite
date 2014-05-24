@@ -1,0 +1,6 @@
+mkdir ~/sites/$1
+sshfs parson@$1:/ ~/sites/$1
+
+
+
+
