@@ -1,0 +1,4 @@
+clear
+hostname | toilet -f mono12 -F gay -t
+
+
