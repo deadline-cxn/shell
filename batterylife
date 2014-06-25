@@ -1,3 +1,12 @@
 #!/bin/bash
-upower -i /org/freedesktop/UPower/devices/battery_BAT1
+upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep -E "state|to\ full|percentage"
+
+#math() { calc -d "$@"|tr -d ~; }
+cd /sys/class/power_supply/BAT1
+ls -la
+#cd /proc/acpi/battery/BAT1;
+#max=$(grep 'design capacity:' info|awk '{print $3}')
+#current=$(grep 'remaining capacity:' state|awk '{print $3}')
+#percent=$(math "($current / $max) * 100");
+#echo $(echo $percent|cut -d. -f1)%
 
