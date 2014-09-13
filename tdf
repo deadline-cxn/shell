@@ -1,0 +1,5 @@
+clear
+df -h | toilet -f smblock -t
+#lsblk | toilet -f ascii9 -t
+
+
