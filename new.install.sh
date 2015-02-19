@@ -20,4 +20,7 @@ mkdir ~/sites
 mkdir ~/sites/area56
 mkdir ~/sites/defectivemind.com
 mkdir ~/sites/3dnetlabs.info
+git config --global user.name "Seth Parson"
+git config --global user.email defectiveseth@gmail.com
+
 
