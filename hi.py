@@ -1,11 +1,14 @@
 #!/usr/bin/python
+
 import glob
 
 def greet(name):
 	print 'Hello %s' % name
+
 name = raw_input('What is your name?\n')
 greet(name);
 pa, b = (1, 1)
+
 while b<100:
 	print '{0} b'.format(b)
 	pa,b = (b,pa+b)
@@ -13,11 +16,9 @@ while b<100:
 python_files = glob.glob('*.py')
 for file_name in sorted(python_files):
     print '    ------' + file_name
-
     with open(file_name) as f:
         for line in f:
             print '    ' + line.rstrip()
-
     print
 
 
@@ -39,7 +40,6 @@ for activity_time in sorted(activities.keys()):
         break
 else:
     print 'Unknown, AFK or sleeping!'
-
 
 
 REFRAIN = '''
