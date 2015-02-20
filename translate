@@ -1,15 +1,4 @@
-#!/bin/bash
-#translate() {
-#wget -qO- "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=$1&langpair=$2|${3:-en}" | sed 's/.*"translatedText":"\([^"]*\)".*}/\1\n/';
-#
+trans $1
+# https://github.com/soimort/translate-shell
 
-echo $1
-
-
-
-wget -U "Mozilla/5.0 1" -qO - "http://translate.google.com/translate_a/t?client=t&text$1&sl=auto&tl=ru"
-
-#| sed 's/\[\[\[\"//' | cut -d \" -f 1
-
-#}
 
