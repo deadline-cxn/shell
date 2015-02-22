@@ -1,2 +1,3 @@
-logrotate -f -s /var/log/logstatus logrotate.conf
+logrotate -f -s /var/log/logstatus /etc/logrotate.conf
+
 
