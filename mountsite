@@ -1,9 +1,5 @@
-user=parson
 site=$1
-
+user=$2
 mkdir ~/sites/$site
-sshfs $user@$site:/ ~/sites/$site
-
-
-
+sshfs $site:/ ~/sites/$site
 

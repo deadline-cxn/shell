@@ -1,0 +1,2 @@
+fortune | cowsay $(ls/usr/share/cowsay | shuf -n1) | toilet -f mono9 -F gay -t -w 762
+
