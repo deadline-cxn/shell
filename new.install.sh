@@ -7,7 +7,7 @@ echo "======================================================================="
 #sudo echo 'parson ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 #sudo echo 'sparson ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 sudo apt-get update
-sudo apt-get install guake terminator mc git sshfs -y
+sudo apt-get install guake terminator mc sshfs -y
 sudo apt-get install python2.7 python3.4 php5 apache2 mysql-server -y
 
 # ZSH
@@ -28,6 +28,9 @@ sudo apt-add-repository "deb http://repos.codelite.org/$distro/ $codebase univer
 sudo apt-get update
 sudo apt-get install codelite wxcrafter -y
 
+# GIT
+sudo apt-get install git -y
+git config --global push.default simple
 git config --global user.name "Seth Parson"
 git config --global user.email "seth@parson.email"
 
