@@ -1,0 +1,4 @@
+sudo grep SCSI /var/log/messages
+# Feb 23 21:52:12 area56 kernel: [1988568.377132] sd 8:0:0:0: [sdd] Attached SCSI disk # < sdd
+sudo mkdir -p /mnt/usb
+sudo mount -t ext4 -o rw,users /dev/sdd1 /mnt/usb
