@@ -34,4 +34,13 @@ git config --global push.default simple
 git config --global user.name "Seth Parson"
 git config --global user.email "seth@parson.email"
 
+# JAVA
+sudo echo "deb http://ppa.launchpad.net/webupd8team/java/$distro $codebase main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
+sudo echo "deb-src http://ppa.launchpad.net/webupd8team/java/$distro $codebase main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
+sudo apt-key adv --keyserver "keyserver.$distro.com" --recv-keys EEA14886
+sudo apt-get update
+sudo apt-get install oracle-java7-installer -y
+sudo apt-get install oracle-java7-set-default -y
+
+
 echo "======================================================================="
