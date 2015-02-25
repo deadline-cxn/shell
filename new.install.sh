@@ -15,7 +15,12 @@ sudo apt-get install gimp youtube-dl -y
 
 # LAMP STUFF
 sudo apt-get install apache2 mysql-server php5 phpmyadmin -y
-
+sudo apt-get install apache2-mpm-prefork apache2-utils -y
+sudo apt-get install libapache2-mod-php5 libapr1 libaprutil1 -y
+sudo apt-get install libdbd-mysql-perl libdbi-perl libnet-daemon-perl -y
+sudo apt-get install libplrpc-perl libpq5 mysql-client-5.5 mysql-common -y
+sudo apt-get install php5-gd php5-mysql php5-imagick p7zip-full -y
+sudo apt-get install wkhtmltopdf pev unadf xdms unace -y
 
 # ZSH
 sudo apt-get install zsh -y
