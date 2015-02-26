@@ -1,6 +1,22 @@
 distro=$(cat /etc/*-release | grep DISTRIB_ID | sed s/DISTRIB_ID=// | tr '[:upper:]' '[:lower:]')
 codebase=$(cat /etc/*-release | grep DISTRIB_CODENAME | sed s/DISTRIB_CODENAME=//)
 
+if [ -z "$distro" ]; then
+   echo "DISTRO not defined from DISTRIB_ID, checking PRETTY_NAME:";
+
+   d=$(cat /etc/*-release | grep "PRETTY_NAME=" | sed "s/PRETTY_NAME=//")
+   codebase=$(echo $d | sed "s/[ a-Z0-9.\/]*(//" | sed "s/)//")
+   distro=$(echo $d | sed "s/ GNU\/Linux[ a-Z0-9.]*([a-Z0-9]*)//" | tr '[:upper:]' '[:lower:]')
+
+   echo $distro;
+   echo $codebase
+
+   if [ -z "$distro" ]; then
+       echo "Can not determine linux distro and codebase";
+       exit
+   fi
+fi
+
 echo "New install script for $distro $codebase"
 echo "======================================================================="
 
@@ -58,6 +74,6 @@ sudo apt-get install oracle-java7-installer -y
 sudo apt-get install oracle-java7-set-default -y
 
 # OTHER DEV STUFF
-sudo apt-get install python2.7 python3.4 ansible lua -y
+sudo apt-get install python2.7 python3.4 ansible lua5.2 -y
 
 echo "======================================================================="
