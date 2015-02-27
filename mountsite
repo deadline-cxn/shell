@@ -1,5 +1,5 @@
 site=$1
 user=$2
-mkdir ~/sites/$site
+mkdir ~/sites/$site >/dev/null 2>&1
 sshfs $site:/ ~/sites/$site
 
