@@ -113,3 +113,5 @@ sudo ~/ansible/setup.py build
 sudo ~/ansible/setup.py install
 
 echo "======================================================================="
+
+sudo apt-get -f install -y
