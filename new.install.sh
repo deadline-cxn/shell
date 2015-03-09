@@ -27,7 +27,8 @@ sudo apt-get install guake terminator mc sshfs gparted -y
 sudo apt-get install gimp youtube-dl -y
 
 # LAMP STUFF
-sudo apt-get install apache2 mysql-server php5 phpmyadmin -y
+sudo apt-get install apache2 mysql-server php5 -y
+sudo apt-get install phpmyadmin -y
 sudo apt-get install apache2-mpm-prefork apache2-utils -y
 sudo apt-get install libapache2-mod-php5 libapr1 libaprutil1 -y
 sudo apt-get install libdbd-mysql-perl libdbi-perl libnet-daemon-perl -y
@@ -112,3 +113,5 @@ sudo ~/ansible/setup.py build
 sudo ~/ansible/setup.py install
 
 echo "======================================================================="
+
+sudo apt-get -f install -y
