@@ -105,6 +105,11 @@ sudo apt-get install python-setuptools -y
 sudo apt-get install python-dev -y
 sudo apt-get install lua5.2 -y
 
+# OTHER STUFF
+sudo apt-get install toilet -y
+sudo apt-get install nmap -y
+sudo apt-get install docky -y
+
 # ANSIBLE
 git clone https://github.com/ansible/ansible.git ~/ansible
 cd ~/ansible
