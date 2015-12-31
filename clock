@@ -1,0 +1,2 @@
+while true; do clear; echo "$(date '+%D %T' | toilet -t -f bigmono12 -F border --gay)"; sleep 1; done
+
