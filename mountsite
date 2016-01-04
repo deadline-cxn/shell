@@ -1,5 +1,6 @@
 site=$1
 user=$2
 mkdir ~/sites/$site >/dev/null 2>&1
-sshfs $site:/ ~/sites/$site
+sshfs $site:/ ~/sites/$site -o follow_symlinks -o transform_symlinks
+
 
