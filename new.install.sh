@@ -106,7 +106,7 @@ sudo apt-get install python-dev -y
 sudo apt-get install lua5.2 -y
 
 # OTHER STUFF
-sudo apt-get install toilet nmap docky htop screenfetch -y
+sudo apt-get install toilet nmap docky htop screenfetch openssh-server -y
 
 # ANSIBLE
 git clone https://github.com/ansible/ansible.git ~/ansible
