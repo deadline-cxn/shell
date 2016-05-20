@@ -1,0 +1,4 @@
+cd ~/sites
+for i in $(ls ~/sites); do sudo umount $i ; done
+
+
