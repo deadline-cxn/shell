@@ -1,6 +1,18 @@
 site=$1
-user=$2
-mkdir ~/sites/$site >/dev/null 2>&1
-sshfs $site:/ ~/sites/$site -o follow_symlinks -o transform_symlinks
 
+if [[ -z "$2" ]]; then
+ user=""
+else
+ user="$2@"
+fi
+if [[ -z "$3" ]]; then
+ port=22
+else
+ port=$3
+fi
+
+echo site:$1 user:$2 port:$3
+
+mkdir ~/sites/$site >/dev/null 2>&1
+sshfs $user$site:/ ~/sites/$site -p $port -o follow_symlinks -o transform_symlinks
 
