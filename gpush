@@ -1,5 +1,4 @@
 d=${PWD##*/}
 git commit -a -m "$1"
-
-git push ssh://sethcoder@github.com/sethcoder/$d
+git push ssh://sethcoder@github.com/sethcoder/$d master:master
 
