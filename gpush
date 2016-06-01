@@ -1,3 +1,5 @@
+echo pwd
 git commit -a -m "$1"
+
 git push ssh://sethcoder@github.com/sethcoder/
 
