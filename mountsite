@@ -1,7 +1,7 @@
+# rsync -Cav -e "ssh -p 2222" ~/grr.sethcoder.com/ sethcode@sethcoder.com:~/www/grr.sethcoder.com/
 site=$1
-
 #if [[ -z "$2" ]]; then
-# user=""
+## user=""
 #else
 # user="$2@"
 #fi
@@ -10,10 +10,11 @@ site=$1
 #else
 # port=$3
 #fi
-
-echo site:$1 user:$2 port:$3
-
+#echo site:$site user:$user port:$port
+#echo "sshfs $user$site:/ -p $port  ~/sites/$site -o follow_symlinks -o transform_symlinks"
 mkdir ~/sites/$site >/dev/null 2>&1
+#sshfs $user$site:/ -p $port ~/sites/$site -o follow_symlinks -o transform_symlinks
 sshfs $site:/ ~/sites/$site -o follow_symlinks -o transform_symlinks
+
 
 
