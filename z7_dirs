@@ -1,0 +1,12 @@
+#!/usr/bin/php
+<?php
+$x=scandir(getcwd());
+foreach($x as $file) {
+	if( $file != "." and $file != ".." )
+	if(is_dir($file)) {
+		$cmd="7z a $file.7z $file -mx9";
+		echo "$cmd ...\n";
+		exec($cmd);
+	}
+}
+
