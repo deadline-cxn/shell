@@ -1,6 +1,6 @@
 #echo "lsblk ALL FIELDS"
 echo "=================================================================================================================="
-sudo lsblk -o NAME,UUID,MOUNTPOINT,FSTYPE,LABEL,SIZE,MODEL,SERIAL
+sudo lsblk -o NAME,UUID,MOUNTPOINT,FSTYPE,LABEL,SIZE,MODEL
 echo "=================================================================================================================="
 #sudo lsblk -o NAME,UUID,TYPE,MAJ:MIN,PARTLABEL,PARTUUID,KNAME
 #echo "=================================================================================================================="
