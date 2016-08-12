@@ -1,4 +1,0 @@
-mkdir ~/sites/rfscms.org
-sshfs -p 2222 sethcode@rfscms.org:/home3/sethcode ~/sites/rfscms.org
-
-

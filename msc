@@ -1,3 +1,0 @@
-mkdir ~/sites/sethcoder.com > /dev/null
-sshfs -p 2222 dminds1@defectiveminds.com:/home/dminds1/public_html/sethcoder.com ~/sites/sethcoder.com
-
