@@ -1,2 +1,0 @@
-ip -o -4 addr show eth0 | grep -v ": lo " | sed 's/ \+/\t/g' | cut -f 4 | cut -d\/ -f1
-

@@ -1,4 +1,0 @@
-ffmpeg -i $1 -i $2 -acodec copy -vcodec mjpeg result.avi
-#-strict -2
-
-
