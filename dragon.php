@@ -2,6 +2,7 @@
 $dragon_hp=1000;
 $your_hp=100;
 echo "You are fighting a dragon.\n";
+$moves=0;
 while($dragon_hp>0) {
     $damage=rand(50,150);
     $critical_strike=false;
@@ -12,6 +13,7 @@ while($dragon_hp>0) {
     if($critical_strike==true) echo " (CRITICAL STRIKE) ";
     echo "\n";
     $dragon_hp-=$damage;
+    $moves++;
 }
-echo "The dragon has died. Congratulations\n";
+echo "The dragon has died in $moves moves. Congratulations\n";
 
