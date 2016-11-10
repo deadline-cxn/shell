@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 $dragon_hp=1000;
 $your_hp=100;
