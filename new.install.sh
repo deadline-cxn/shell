@@ -109,7 +109,7 @@ sudo apt-get install lua5.2 -y
 sudo apt-get install toilet nmap docky htop screenfetch openssh-server -y
 
 # ANSIBLE
-git clone https://github.com/ansible/ansible.git ~/ansible
+git clone https://github.com/ansible/ansible.git ~/ansible --recursive
 cd ~/ansible
 chmod +x ~/ansible/setup.py
 sudo ~/ansible/setup.py build
