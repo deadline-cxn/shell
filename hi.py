@@ -48,7 +48,7 @@ REFRAIN = '''
 take one down, pass it around,
 %d bottles of beer on the wall!
 '''
-bottles_of_beer = 99
+bottles_of_beer = 2
 while bottles_of_beer > 1:
     print REFRAIN % (bottles_of_beer, bottles_of_beer, bottles_of_beer - 1)
     bottles_of_beer -= 1
@@ -62,10 +62,11 @@ class BankAccount(object):
         self.balance -= amount
     def overdrawn(self):
         return self.balance < 0
-my_account = BankAccount(15)
-my_account.withdraw(5)
-print my_account.balance
 
+my_account = BankAccount(15)
+print "Bank Account balance: %d" % my_account.balance
+my_account.withdraw(5)
+print "Withdrew 5 balance  : %d" % my_account.balance
 
 
 import unittest
