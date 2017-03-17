@@ -1,0 +1,11 @@
+#!/bin/bash
+# Find File - ff  #
+if [ ! "$1" ];then
+  exit
+fi
+sudo find $2 . -name "*${1}*" | grep -v \\.svn
+##################################################################################
+# The below is essentially the same as fif, but not the original purpose of ff
+##################################################################################
+# if [ "$1" == "" ]; then exit; fi
+# find -L . -not -iwholename '*/.svn/*' -type f -print0 | xargs -0 grep -l "$*"

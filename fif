@@ -1,0 +1,23 @@
+#! /bin/bash
+
+# Find In File - fif
+# Search for string contained within file
+
+if [ ! "$1" ];then
+  exit
+fi
+
+if [ -d "$1" ]; then
+    FROM="$1"
+    WHAT="$2"
+    FIND_FLAGS="$3"
+else
+    FROM="."
+    WHAT="$1"
+    FIND_FLAGS="$2"
+fi
+
+find $FIND_FLAGS $FROM/ -not -iwholename '*/.svn/*' -type f -print0 | xargs -0 grep -l "$WHAT"
+
+# find -L . -type f -exec grep -il "$*" {} \; | grep -v '\.svn'
+
