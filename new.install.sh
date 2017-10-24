@@ -58,6 +58,7 @@ install youtube-dl
 
 # LAMP STUFF
 install apache2
+install httpd
 install mysql-server
 install php5
 install phpmyadmin
