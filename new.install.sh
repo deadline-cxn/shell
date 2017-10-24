@@ -33,9 +33,7 @@ echo "New install script for [$distro][$codebase]"
 echo "======================================================================================="
 
 function install {
-
   echo $distro $1
-
   case "$distro" in
     *centos*)
       sudo yum install -y $1
@@ -55,6 +53,17 @@ install sshfs
 install gparted
 install gimp
 install youtube-dl
+install python2.7
+install python3.2
+install python-setuptools
+install python-dev
+install lua5.2
+install toilet
+install nmap
+install docky
+install htop
+install screenfetch
+install openssh-server
 
 # LAMP STUFF
 install apache2
@@ -78,6 +87,8 @@ install php5-gd
 install php5-mysql
 install php5-imagick
 install p7zip-full
+install p7zip
+install p7zip-plugins
 install wkhtmltopdf
 install pev
 install unadf
@@ -101,13 +112,16 @@ else
 
   case "$distro" in
     *centos*)
+       install redhat-lsb-core-4.1-27.el7.centos.1.x86_64
+       install libXScrnSaver-devel-1.2.2-6.1.el7.x86_64
+       rm ~/Downloads/google-chrome-stable_current_x86_64.rpm
        wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
        sudo rpm -Uvh google-chrome-stable_current_x86_64.rpm
        ;;
     *)
+       rm ~/Downloads/google-chrome-stable_current_amd64.deb
        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
        sudo dpkg -i google-chrome-stable_current_amd64.deb
-
        ;;
   esac
 
@@ -161,21 +175,6 @@ else
     #sudo apt-get install oracle-java8-set-default -y
 fi
 
-# OTHER DEV STUFF
-install python2.7
-install python3.2
-install python-setuptools
-install python-dev
-install lua5.2
-
-# OTHER STUFF
-install toilet
-install nmap
-install docky
-install htop
-install screenfetch
-install openssh-server
-
 # ANSIBLE
 if [ -f "~/ansible/setup.py.build" ]; then
   git clone https://github.com/ansible/ansible.git ~/ansible --recursive
@@ -186,7 +185,7 @@ if [ -f "~/ansible/setup.py.build" ]; then
 fi
 
 echo "======================================================================="
-sudo apt-get upgrade
-sudo apt-get -f install -y
+#sudo apt-get upgrade
+#sudo apt-get -f install -y
 
 echo 'sparson ALL=(ALL) NOPASSWD: ALL'
