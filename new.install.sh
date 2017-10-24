@@ -16,6 +16,9 @@ if [ -z "$distro" ]; then
    fi
 fi
 
+echo "New install script for [$distro][$codebase]"
+echo "======================================================================================="
+
 case "$distro" in
   *centos*)
      echo " CentOS detected... Adding EPEL repositories. "
@@ -28,10 +31,6 @@ case "$distro" in
      ;;
 esac
 
-
-echo "New install script for [$distro][$codebase]"
-echo "======================================================================================="
-
 function install {
   echo $distro $1
   case "$distro" in
@@ -39,11 +38,46 @@ function install {
       sudo yum install -y $1
       ;;
     *)
-      sudo apt-get install -y $1
+      sudo apt-get install -y $1 > /dev/null
+      
+      case "$?" in
+          100) 
+            echo "Not found"
+            ;;
+          0)
+            ;;
+      esac
       ;;
-  esac
+esac
 }
 
+case "$distro" in
+  *centos*)
+     install httpd
+     install p7zip
+     install p7zip-plugins
+     ;;
+  *)
+     install bareafceds
+     install python2.7
+     install python3.2
+     install python-setuptools
+     install python-dev
+     install lua5.2
+     install toilet
+     install screenfetch
+     install apache2
+     install p7zip-full
+     install mysql-server
+     install apache2-utils
+     install mysql-client
+     install mysql-common
+     install pev
+     install unadf
+     install xdms
+     install unace
+     ;;
+esac
 
 # MISC NEW INSTALL PROGRAMS
 install guake
@@ -53,53 +87,27 @@ install sshfs
 install gparted
 install gimp
 install youtube-dl
-install python2.7
-install python3.2
-install python-setuptools
-install python-dev
-install lua5.2
-install toilet
 install nmap
 install docky
 install htop
-install screenfetch
 install openssh-server
-
-# LAMP STUFF
-install apache2
-install httpd
-install mysql-server
-install php5
 install phpmyadmin
-install apache2-mpm-prefork
-install apache2-utils
-install libapache2-mod-php5
-install libapr1
-install libaprutil1
-install libdbd-mysql-perl
-install libdbi-perl
-install libnet-daemon-perl
-install libplrpc-perl
-install libpq5
-install mysql-client-5.5
-install mysql-common
-install php5-gd
-install php5-mysql
-install php5-imagick
-install p7zip-full
-install p7zip
-install p7zip-plugins
 install wkhtmltopdf
-install pev
-install unadf
-install xdms
-install unace
+
+echo "======================================================================================="
 
 # ZSH
-install zsh
-echo "Enter password to change shell to zsh "
-chsh -s /bin/zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+if [ -f "../.oh-my-zsh/README.md" ]; then
+    echo "ZSH already installed, skipping"
+    echo "======================================================================================="
+else
+    echo "INSTALLING ZSH"
+    echo "======================================================================================="
+    install zsh
+    echo "Enter password to change shell to zsh:"
+    chsh -s /bin/zsh
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
 cp ~/shell/.zshrc ~/.zshrc
 
 # GOOGLE CHROME
@@ -107,9 +115,9 @@ if [ -f "/usr/bin/google-chrome" ]; then
     echo "Google Chrome already installed, skipping dowload";
     echo "======================================================================================="
 else
+    echo "INSTALLING Google Chrome"
+    echo "======================================================================================="
     cd ~/Downloads
-
-
   case "$distro" in
     *centos*)
        install redhat-lsb-core-4.1-27.el7.centos.1.x86_64
@@ -124,19 +132,16 @@ else
        sudo dpkg -i google-chrome-stable_current_amd64.deb
        ;;
   esac
-
-
-
-
+    cd ~/shell
 fi
 
-########################### DEVELOPMENT SECTION
-
-# CODELITE
+# Codelite
 if [ -f "/usr/bin/codelite" ]; then
     echo "Codelite already installed, skipping"
     echo "======================================================================================="
 else
+    echo "INSTALLING Codelite"
+    echo "======================================================================================="
     sudo apt-key adv --fetch-keys http://repos.codelite.org/CodeLite.asc
     sudo apt-add-repository "deb http://repos.codelite.org/$distro/ $codebase universe"
     sudo apt-get update
@@ -149,6 +154,8 @@ if [ -f "/usr/bin/git" ]; then
     echo "Git already installed, skipping"
     echo "======================================================================================="
 else
+    echo "INSTALLING Git"
+    echo "======================================================================================="
     install git
 fi
 git config --global push.default matching
@@ -159,6 +166,8 @@ if [ -f "/usr/bin/svn" ]; then
     echo "Subversion already installed, skipping"
     echo "======================================================================================="
 else
+    echo "INSTALLING Subversion"
+    echo "======================================================================================="
     install subversion
 fi
 
@@ -167,6 +176,8 @@ if [ -f "/usr/bin/java" ]; then
     echo "Oracle Java already installed, skipping"
     echo "======================================================================================="
 else
+    echo "INSTALLING Oracle Java"
+    echo "======================================================================================="
     sudo echo "deb http://ppa.launchpad.net/webupd8team/java/$distro $codebase main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
     sudo echo "deb-src http://ppa.launchpad.net/webupd8team/java/$distro $codebase main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
     sudo apt-key adv --keyserver "keyserver.$distro.com" --recv-keys EEA14886
@@ -176,16 +187,35 @@ else
 fi
 
 # ANSIBLE
-if [ -f "~/ansible/setup.py.build" ]; then
-  git clone https://github.com/ansible/ansible.git ~/ansible --recursive
-  cd ~/ansible
-  chmod +x ~/ansible/setup.py
-  sudo ~/ansible/setup.py build
-  sudo ~/ansible/setup.py install
+if [ -f "../ansible/setup.py" ]; then
+    echo "Ansible already installed, skipping"
+    echo "======================================================================================="
+else
+    echo "INSTALLING Ansible"
+    echo "======================================================================================="
+    git clone https://github.com/ansible/ansible.git ~/ansible --recursive
+    cd ~/ansible
+    chmod +x ~/ansible/setup.py
+    sudo ~/ansible/setup.py build
+    sudo ~/ansible/setup.py install
 fi
 
-echo "======================================================================="
-#sudo apt-get upgrade
-#sudo apt-get -f install -y
+echo "UPDATE/UPGRADE packages"
+echo "======================================================================================="
 
-echo 'sparson ALL=(ALL) NOPASSWD: ALL'
+case "$distro" in
+  *centos*)
+     sudo yum update
+     sudo yum upgrade -y
+     ;;
+  *)
+     sudo apt-get update
+     sudo apt-get upgrade -y
+     sudo apt-get -f install -y
+     ;;
+esac
+
+echo "======================================================================================="
+echo "    ***   SUDO FILE ADD: sparson ALL=(ALL) NOPASSWD: ALL    ***"
+echo "======================================================================================="
+echo "ALL DONE"
