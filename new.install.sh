@@ -94,11 +94,25 @@ cp ~/shell/.zshrc ~/.zshrc
 if [ -f "/usr/bin/google-chrome" ]; then
     echo "Google Chrome already installed, skipping dowload";
     echo "======================================================================================="
-
 else
     cd ~/Downloads
-    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+
+  case "$distro" in
+    *centos*)
+       wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.rpm
+       sudo rpm -Uvh google-chrome-stable_current_amd64.rpm
+       ;;
+    *)
+       wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+       sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+       ;;
+  esac
+
+
+
+
 fi
 
 ########################### DEVELOPMENT SECTION
