@@ -100,8 +100,8 @@ else
 
   case "$distro" in
     *centos*)
-       wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.rpm
-       sudo rpm -Uvh google-chrome-stable_current_amd64.rpm
+       wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+       sudo rpm -Uvh google-chrome-stable_current_x86_64.rpm
        ;;
     *)
        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
