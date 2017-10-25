@@ -80,6 +80,7 @@ case "$distro" in
 esac
 
 # MISC NEW INSTALL PROGRAMS
+install open-vm-tools-desktop
 install guake
 install terminator
 install mc
