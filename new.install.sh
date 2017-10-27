@@ -35,11 +35,10 @@ function install {
   echo $distro $1
   case "$distro" in
     *centos*)
-      sudo yum install -y $1 > /dev/null
+      sudo yum install -y $1
       ;;
     *)
-      sudo apt-get install -y $1 > /dev/null
-      
+      sudo apt-get install -y $1
       case "$?" in
           100) 
             echo "Not found"
