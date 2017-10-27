@@ -55,9 +55,11 @@ case "$distro" in
      install httpd
      install p7zip
      install p7zip-plugins
+     install clang
+     install libssh
+     install xterm
      ;;
   *)
-     install bareafceds
      install python2.7
      install python3.2
      install python-setuptools
