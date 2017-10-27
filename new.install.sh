@@ -142,11 +142,20 @@ if [ -f "/usr/bin/codelite" ]; then
 else
     echo "INSTALLING Codelite"
     echo "======================================================================================="
-    sudo apt-key adv --fetch-keys http://repos.codelite.org/CodeLite.asc
-    sudo apt-add-repository "deb http://repos.codelite.org/$distro/ $codebase universe"
-    sudo apt-get update
-    install codelite
-    install wxcrafter
+
+  case "$distro" in
+    *centos*)
+       sudo rpm --import https://repos.codelite.org/CodeLite.asc
+       sudo rpm -Uvh https://repos.codelite.org/rpms-11.0/fedora/codelite-11.0-1.fc26.x86_64.rpm
+       ;;
+    *) 
+       sudo apt-key adv --fetch-keys http://repos.codelite.org/CodeLite.asc
+       sudo apt-add-repository "deb http://repos.codelite.org/$distro/ $codebase universe"
+       sudo apt-get update
+       install codelite
+       install wxcrafter
+       ;;
+  esac
 fi
 
 # GIT / SUBVERSION
