@@ -113,6 +113,7 @@ fi
 cp ~/shell/.zshrc ~/.zshrc
 
 # GOOGLE CHROME
+echo "======================================================================================="
 if [ -f "/usr/bin/google-chrome" ]; then
     echo "Google Chrome already installed, skipping dowload";
     echo "======================================================================================="
@@ -138,6 +139,7 @@ else
 fi
 
 # Codelite
+echo "======================================================================================="
 if [ -f "/usr/bin/codelite" ]; then
     echo "Codelite already installed, skipping"
     echo "======================================================================================="
@@ -148,7 +150,7 @@ else
   case "$distro" in
     *centos*)
        sudo rpm --import https://repos.codelite.org/CodeLite.asc
-       sudo rpm -Uvh https://repos.codelite.org/rpms-11.0/fedora/codelite-11.0-1.fc26.x86_64.rpm
+       #sudo rpm -Uvh https://repos.codelite.org/rpms-11.0/fedora/codelite-11.0-1.fc26.x86_64.rpm
        ;;
     *) 
        sudo apt-key adv --fetch-keys http://repos.codelite.org/CodeLite.asc
@@ -161,6 +163,7 @@ else
 fi
 
 # GIT / SUBVERSION
+echo "======================================================================================="
 if [ -f "/usr/bin/git" ]; then
     echo "Git already installed, skipping"
     echo "======================================================================================="
@@ -183,6 +186,7 @@ else
 fi
 
 # JAVA
+echo "======================================================================================="
 if [ -f "/usr/bin/java" ]; then
     echo "Oracle Java already installed, skipping"
     echo "======================================================================================="
@@ -198,6 +202,7 @@ else
 fi
 
 # ANSIBLE
+echo "======================================================================================="
 if [ -f "../ansible/setup.py" ]; then
     echo "Ansible already installed, skipping"
     echo "======================================================================================="
