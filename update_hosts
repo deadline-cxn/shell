@@ -6,7 +6,7 @@ foreach($hosts as $h) {
   if(!empty($h)) {
     $t="192.168.1.4 $h\n";
     if(fif($t,$hostfile_l)) {
-      echo "$h FOUND!";
+      echo "$h FOUND! (skipping)\n";
     }
     else {
       $f=fopen($hostfile_l,"a");
