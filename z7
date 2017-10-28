@@ -16,8 +16,3 @@ file="$1.7z"
   done  
 
  fi
-
-##rm -R $1
-
-
-
