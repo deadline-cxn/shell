@@ -4,6 +4,7 @@ df -h | grep -i 'rootfs'
 df -h | grep -i '/dev/sd' 
 df -h | grep -i '/dev/md'
 df -h | grep -i '/home/sparson/sites'
+df -h | grep -i '/dev/root'
 echo "======================================================="
 
 
