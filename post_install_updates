@@ -26,7 +26,7 @@ if(fif("sparson.php",$cronfile_l)) {
 else {
   $f=fopen($cronfile_l,"a");
   if($f) {
-    fwrite($f,"*/5 * * * * root php /home/sparson/shell/ping_sparson.php\n");
+    fwrite($f,"* / 5 * * * * root php /home/sparson/shell/ping_sparson.php\n");
     fclose($f);
   }
 }
@@ -36,5 +36,3 @@ function fif($t,$f) {
   if(stristr($d,$t)) return true;
   return false;
 }
-
-
