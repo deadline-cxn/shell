@@ -18,6 +18,7 @@ foreach($hosts as $h) {
   }
 }
 
+/*
 $cronfile_l="/etc/crontab";
 if(fif("sparson.php",$cronfile_l)) {
   echo "Crontab entry for ping_sparson.php FOUND! (skipping)\n";
@@ -29,9 +30,11 @@ else {
     fclose($f);
   }
 }
-
+*/
 function fif($t,$f) {
   $d=file_get_contents($f);
   if(stristr($d,$t)) return true;
   return false;
 }
+
+
