@@ -1,7 +1,7 @@
 #!/bin/bash
 
-distro=$(cat /etc/*-release | grep DISTRIB_ID | sed s/DISTRIB_ID=// | tr '[:upper:]' '[:lower:]')
-codebase=$(cat /etc/*-release | grep DISTRIB_CODENAME | sed s/DISTRIB_CODENAME=//)
+distro   = $(cat /etc/*-release | grep DISTRIB_ID | sed s/DISTRIB_ID=// | tr '[:upper:]' '[:lower:]')
+codebase = $(cat /etc/*-release | grep DISTRIB_CODENAME | sed s/DISTRIB_CODENAME=//)
 
 if [ -z "$distro" ]; then
    echo "DISTRO not defined from DISTRIB_ID, checking PRETTY_NAME:";
