@@ -8,7 +8,7 @@ foreach($hosts as $h) {
          $exp=explode(" ",$h);
          $t=$exp[0];
          $h=$exp[1];
-         $t.=" $h";
+         $t.=" $h\n";
     }
     else $t="192.168.1.4 $h\n";
 echo "$t\n";
