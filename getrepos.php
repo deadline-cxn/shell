@@ -1,3 +1,4 @@
+#!/bin/php
 <?php
 //mkdir("/home/sparson/develop");
 //mkdir("/home/sparson/develop/projects");
