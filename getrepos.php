@@ -3,7 +3,8 @@
 //mkdir("/home/sparson/develop");
 //mkdir("/home/sparson/develop/projects");
 // chdir("/home/sparson/develop/projects");
-$repos=file_get_contents("./repos");
+//echo $argv[1];
+$repos=file_get_contents($argv[1]);
 $repo_list=explode("\n",$repos);
 foreach($repo_list as $repo) {
 	if(!empty($repo)) {
