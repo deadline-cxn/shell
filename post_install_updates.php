@@ -4,8 +4,15 @@ $hostfile=file_get_contents("./hosts");
 $hosts=explode("\n",$hostfile);
 foreach($hosts as $h) {
   if(!empty($h)) {
-    $t="192.168.1.4 $h\n";
-    if(fif($t,$hostfile_l)) {
+    if(stristr($h,"192")) {
+         $exp=explode(" ",$h);
+         $t=$exp[0];
+         $h=$exp[1];
+         $t.=" $h\n";
+    }
+    else $t="192.168.1.4 $h\n";
+echo "$t\n";
+    if(fif($h,$hostfile_l)) {
       echo "$h FOUND! (skipping)\n";
     }
     else {
