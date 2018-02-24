@@ -1,0 +1,12 @@
+#!/bin/bash
+
+nf=$(echo "$1"|sed 's/.mp3/.new.mp3/')
+
+#echo "$nf"
+
+mp3splt -r -pth=-30 -o@f.new "$1"
+
+mv "$1" "$1.old"
+mv "$nf" "$1"
+
+
