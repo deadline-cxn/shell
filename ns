@@ -1,4 +1,6 @@
 echo Gathering network connection information, please wait.
-netstat -a > netstat
-less netstat
+netstat -a > /tmp/netstat
+less /tmp/netstat
+rm /tmp/netstat
+
 

@@ -1,3 +1,0 @@
-find . -type f -iname "*${*}*" ;
-#find . -iname "*$1*";
-

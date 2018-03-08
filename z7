@@ -1,10 +1,8 @@
 file="$1.7z"
 7z a $file $1 -mx9
-
- if [ -f $file ]
+if [ -f $file ]
  then
   while true; do
-
 	echo File [$file] 
 	echo Filesize: ;stat -c %s $file
     read -p "Do you wish to remove folder [$1]?" yn
@@ -14,5 +12,4 @@ file="$1.7z"
         * ) echo "Please answer y or n.";;
     esac
   done  
-
- fi
+fi
