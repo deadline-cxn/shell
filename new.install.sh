@@ -40,7 +40,7 @@ function install {
     *)
       sudo apt-get install -y $1
       case "$?" in
-          100) 
+          100)
             echo "Not found"
             ;;
           0)
@@ -100,18 +100,18 @@ install wkhtmltopdf
 echo "======================================================================================="
 
 # ZSH
-if [ -f "../.oh-my-zsh/README.md" ]; then
-    echo "ZSH already installed, skipping"
-    echo "======================================================================================="
-else
-    echo "INSTALLING ZSH"
-    echo "======================================================================================="
-    install zsh
-    echo "Enter password to change shell to zsh:"
-    chsh -s /bin/zsh
-    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-fi
-cp ~/shell/.zshrc ~/.zshrc
+#if [ -f "../.oh-my-zsh/README.md" ]; then
+#    echo "ZSH already installed, skipping"
+#    echo "======================================================================================="
+#else
+#    echo "INSTALLING ZSH"
+#    echo "======================================================================================="
+#    install zsh
+#    echo "Enter password to change shell to zsh:"
+#    chsh -s /bin/zsh
+#    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+#fi
+#cp ~/shell/.zshrc ~/.zshrc
 
 # GOOGLE CHROME
 echo "======================================================================================="
@@ -153,7 +153,7 @@ else
        sudo rpm --import https://repos.codelite.org/CodeLite.asc
        #sudo rpm -Uvh https://repos.codelite.org/rpms-11.0/fedora/codelite-11.0-1.fc26.x86_64.rpm
        ;;
-    *) 
+    *)
        sudo apt-key adv --fetch-keys http://repos.codelite.org/CodeLite.asc
        sudo apt-add-repository "deb http://repos.codelite.org/$DISTRO/ $CODEBASE universe"
        sudo apt-get update
@@ -175,7 +175,7 @@ else
 fi
 git config --global push.default matching
 git config --global user.name "Seth Parson"
-git config --global user.email "seth@parson.email"
+git config --global user.email "defectiveseth@gmail.com"
 
 if [ -f "/usr/bin/svn" ]; then
     echo "Subversion already installed, skipping"
@@ -187,20 +187,20 @@ else
 fi
 
 # JAVA
-echo "======================================================================================="
-if [ -f "/usr/bin/java" ]; then
-    echo "Oracle Java already installed, skipping"
-    echo "======================================================================================="
-else
-    echo "INSTALLING Oracle Java"
-    echo "======================================================================================="
-    sudo echo "deb http://ppa.launchpad.net/webupd8team/java/$DISTRO $CODEBASE main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
-    sudo echo "deb-src http://ppa.launchpad.net/webupd8team/java/$DISTRO $CODEBASE main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
-    sudo apt-key adv --keyserver "keyserver.$DISTRO.com" --recv-keys EEA14886
-    sudo apt-get update
-    install openjdk-8-jre-headless
-    #sudo apt-get install oracle-java8-set-default -y
-fi
+#echo "======================================================================================="
+#if [ -f "/usr/bin/java" ]; then
+#    echo "Oracle Java already installed, skipping"
+#    echo "======================================================================================="
+#else
+#    echo "INSTALLING Oracle Java"
+#    echo "======================================================================================="
+#    sudo echo "deb http://ppa.launchpad.net/webupd8team/java/$DISTRO $CODEBASE main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
+#    sudo echo "deb-src http://ppa.launchpad.net/webupd8team/java/$DISTRO $CODEBASE main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
+#    sudo apt-key adv --keyserver "keyserver.$DISTRO.com" --recv-keys EEA14886
+#    sudo apt-get update
+#    install openjdk-8-jre-headless
+#    #sudo apt-get install oracle-java8-set-default -y
+#fi
 
 # ANSIBLE
 #echo "======================================================================================="
