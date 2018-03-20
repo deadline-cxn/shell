@@ -1,0 +1,2 @@
+ansible-playbook -i hosts site.yml -e ansible_python_interpreter=/usr/bin/python
+
