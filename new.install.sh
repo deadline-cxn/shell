@@ -97,6 +97,16 @@ install openssh-server
 install phpmyadmin
 install wkhtmltopdf
 
+install gcc
+install python-pip
+install python-dev
+install libffi-dev
+install libssl-dev
+install libxml2-dev
+install libxslt1-dev
+install libjpeg8-dev
+install zlib1g-dev
+
 echo "======================================================================================="
 
 # ZSH
