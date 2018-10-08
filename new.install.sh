@@ -107,6 +107,8 @@ install libxslt1-dev
 install libjpeg8-dev
 install zlib1g-dev
 
+install transmission-cli
+
 echo "======================================================================================="
 
 # ZSH
