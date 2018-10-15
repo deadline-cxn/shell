@@ -1,2 +1,9 @@
+#!/bin/bash
+APP_NAME="IPTABLES  :SAVE          ";
+function ca_echo {
+    echo "$(date):[$APP_NAME]:$1";
+}
+ca_echo "********************************************************************** $0 ";
 iptables-save > /root/iptables.fw
+ca_echo "DONE!";
 
