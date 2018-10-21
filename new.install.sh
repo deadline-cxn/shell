@@ -40,7 +40,7 @@ function install {
     *)
       sudo apt-get install -y $1
       case "$?" in
-          100)
+          100) 
             echo "Not found"
             ;;
           0)
@@ -82,14 +82,14 @@ esac
 
 # MISC NEW INSTALL PROGRAMS
 install screen
-install open-vm-tools-desktop
+install samba
 install guake
 install terminator
 install mc
 install sshfs
 install gparted
 install gimp
-install youtube-dl
+#install youtube-dl
 install nmap
 install docky
 install htop
@@ -97,17 +97,8 @@ install openssh-server
 install phpmyadmin
 install wkhtmltopdf
 
-install gcc
-install python-pip
-install python-dev
-install libffi-dev
-install libssl-dev
-install libxml2-dev
-install libxslt1-dev
-install libjpeg8-dev
-install zlib1g-dev
-
-install transmission-cli
+sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
 
 echo "======================================================================================="
 
@@ -126,54 +117,54 @@ echo "==========================================================================
 #cp ~/shell/.zshrc ~/.zshrc
 
 # GOOGLE CHROME
-echo "======================================================================================="
-if [ -f "/usr/bin/google-chrome" ]; then
-    echo "Google Chrome already installed, skipping dowload";
-    echo "======================================================================================="
-else
-    echo "INSTALLING Google Chrome"
-    echo "======================================================================================="
-    cd ~/Downloads
-  case "$DISTRO" in
-    *centos*)
-       install redhat-lsb-core-4.1-27.el7.centos.1.x86_64
-       install libXScrnSaver-devel-1.2.2-6.1.el7.x86_64
-       rm ~/Downloads/google-chrome-stable_current_x86_64.rpm
-       wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-       sudo rpm -Uvh google-chrome-stable_current_x86_64.rpm
-       ;;
-    *)
-       rm ~/Downloads/google-chrome-stable_current_amd64.deb
-       wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-       sudo dpkg -i google-chrome-stable_current_amd64.deb
-       ;;
-  esac
-    cd ~/shell
-fi
+#echo "======================================================================================="
+#if [ -f "/usr/bin/google-chrome" ]; then
+#    echo "Google Chrome already installed, skipping dowload";
+#    echo "======================================================================================="
+#else
+#    echo "INSTALLING Google Chrome"
+#    echo "======================================================================================="
+#    cd ~/Downloads
+#  case "$DISTRO" in
+#    *centos*)
+#       install redhat-lsb-core-4.1-27.el7.centos.1.x86_64
+#       install libXScrnSaver-devel-1.2.2-6.1.el7.x86_64
+#       rm ~/Downloads/google-chrome-stable_current_x86_64.rpm
+#       wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+#       sudo rpm -Uvh google-chrome-stable_current_x86_64.rpm
+#       ;;
+#    *)
+#       rm ~/Downloads/google-chrome-stable_current_amd64.deb
+#       wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#       sudo dpkg -i google-chrome-stable_current_amd64.deb
+#       ;;
+#  esac
+#    cd ~/shell
+#fi
 
 # Codelite
 echo "======================================================================================="
-if [ -f "/usr/bin/codelite" ]; then
-    echo "Codelite already installed, skipping"
-    echo "======================================================================================="
-else
-    echo "INSTALLING Codelite"
-    echo "======================================================================================="
-
-  case "$DISTRO" in
-    *centos*)
-       sudo rpm --import https://repos.codelite.org/CodeLite.asc
-       #sudo rpm -Uvh https://repos.codelite.org/rpms-11.0/fedora/codelite-11.0-1.fc26.x86_64.rpm
-       ;;
-    *)
-       sudo apt-key adv --fetch-keys http://repos.codelite.org/CodeLite.asc
-       sudo apt-add-repository "deb http://repos.codelite.org/$DISTRO/ $CODEBASE universe"
-       sudo apt-get update
-       install codelite
-       install wxcrafter
-       ;;
-  esac
-fi
+#if [ -f "/usr/bin/codelite" ]; then
+#    echo "Codelite already installed, skipping"
+#    echo "======================================================================================="
+#else
+#    echo "INSTALLING Codelite"
+#    echo "======================================================================================="#
+#
+#  case "$DISTRO" in
+#    *centos*)
+#       sudo rpm --import https://repos.codelite.org/CodeLite.asc
+#       #sudo rpm -Uvh https://repos.codelite.org/rpms-11.0/fedora/codelite-11.0-1.fc26.x86_64.rpm
+#       ;;
+#    *) 
+#       sudo apt-key adv --fetch-keys http://repos.codelite.org/CodeLite.asc
+#       sudo apt-add-repository "deb http://repos.codelite.org/$DISTRO/ $CODEBASE universe"
+#       sudo apt-get update
+#       install codelite
+#       install wxcrafter
+#       ;;
+#  esac
+#fi
 
 # GIT / SUBVERSION
 echo "======================================================================================="
@@ -187,7 +178,7 @@ else
 fi
 git config --global push.default matching
 git config --global user.name "Seth Parson"
-git config --global user.email "defectiveseth@gmail.com"
+git config --global user.email "seth.parson.71@gmail.com"
 
 if [ -f "/usr/bin/svn" ]; then
     echo "Subversion already installed, skipping"
@@ -199,7 +190,7 @@ else
 fi
 
 # JAVA
-#echo "======================================================================================="
+#@echo "======================================================================================="
 #if [ -f "/usr/bin/java" ]; then
 #    echo "Oracle Java already installed, skipping"
 #    echo "======================================================================================="
