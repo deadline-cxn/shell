@@ -1,0 +1,11 @@
+#!/bin/bash
+grep -R -i \
+--exclude=*.DMS \
+--exclude=*.html \
+--exclude=*.LHA \
+--exclude=*.ZIP \
+--exclude=*.LZX \
+--exclude=*.LZH \
+--exclude=*.EXE \
+--exclude=*.DSQ \
+$1 *

@@ -1,2 +1,5 @@
 youtube-dl -t $1
+sudo chown www-data:www-data *
+sudo chmod 775 *
+
 

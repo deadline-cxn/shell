@@ -1,0 +1,23 @@
+for i in *; do
+
+if [ -d "$i" ]; then
+    cd "$i"
+    xdms_all
+    cd ../
+else
+
+   if xdms u "$i"; then
+      rm "$i"
+      echo "$i REMOVED "
+   else 
+      echo "ERROR extracting: $i "
+   fi
+
+fi
+
+done
+
+
+
+
+
