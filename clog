@@ -1,0 +1,2 @@
+cat /var/log/apache2/*access.log | grep -v 192.168 | grep -v 50.203 | grep -i -v google | grep -v spider | grep -v crawler | grep -v bing
+

@@ -1,0 +1,2 @@
+screen /dev/ttyS0 9600
+

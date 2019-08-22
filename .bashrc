@@ -168,5 +168,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+alias isaid=sudo
+
 export PATH=$PATH:/home/sparson/shell:/home/sparson/bin
 

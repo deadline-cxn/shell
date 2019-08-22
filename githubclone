@@ -1,0 +1,6 @@
+mkdir $1
+cd $1
+git init
+git remote add github git@github.com:sethcoder/$1.git
+git pull github master
+
