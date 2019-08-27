@@ -1,4 +1,5 @@
 #!/bin/bash
-tail -f /var/log/fail2ban.log /var/log/auth.log /var/log/apache2/*access.log /var/log/cron.log
+sudo tail -f /var/log/fail2ban.log /var/log/auth.log /var/log/apache2/*access.log /var/log/cron.log
+
 
 
