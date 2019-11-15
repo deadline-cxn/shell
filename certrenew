@@ -1,0 +1,3 @@
+echo "Updating cert for $1"
+sudo certbot run -a webroot -i apache -w /var/www/$1/html -d $1
+
