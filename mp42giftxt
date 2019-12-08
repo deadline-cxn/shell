@@ -1,0 +1,23 @@
+ffmpeg -i $1  \
+   -filter_complex "fps=6, \
+                    scale=480:-1: \
+                    flags=lanczos, \
+                    drawtext=fontfile=/home/sparson/shell/nokiafc22.ttf: \
+                    text='$2': \
+                    fontsize=24: \
+                    fontcolor=white: \
+                    shadowcolor=black:shadowx=3:shadowy=3: \
+                    x=(w-tw)/2:y=(h/PHI)+th+50" \
+   $1.gif -hide_banner
+
+sudo chmod 777 $1.gif
+
+#                    split[x1][x2]; \
+#                    [x1]palettegen[p];[x2][p]paletteuse" \
+
+# box=0:boxcolor=black@0:boxborderw=5: \
+
+
+
+
+

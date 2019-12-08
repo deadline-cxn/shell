@@ -1,0 +1,2 @@
+find . -name '*.log' -exec tail -f "$path$file" {} +
+

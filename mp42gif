@@ -1,0 +1,5 @@
+#ffmpeg -i $1 -an -c:v libvpx -b:v 1M -c:a libvorbis $1.gif
+#ffmpeg -i $1 $1.gif -hide_banner
+ffmpeg -i $1 -vf scale=320:180 -r 10 $1.gif -hide_banner
+
+

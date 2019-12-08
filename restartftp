@@ -1,0 +1,4 @@
+sudo chmod 755 /files/ftp
+sudo systemctl restart vsftpd
+sleep 5
+sudo chmod 775 /files/ftp

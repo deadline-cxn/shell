@@ -1,0 +1,4 @@
+cd /var/log
+multitail -f auth.log cron.log vsftpd.log mail.log fail2ban.log
+
+

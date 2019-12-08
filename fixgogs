@@ -1,0 +1,6 @@
+find /etc/letsencrypt/archive/gogs.sethcoder.com/fullchain*.pem -printf '%p\n' -exec cp {} /gitrepos/gogs/custom/conf/ssl/fullchain.pem \;
+find /etc/letsencrypt/archive/gogs.sethcoder.com/privkey*.pem -printf '%p\n' -exec cp {} /gitrepos/gogs/custom/conf/ssl/privkey.pem \;
+chown git:git -R /gitrepos/gogs/custom/conf/ssl/*
+
+# p /etc/letsencrypt/archive/gogs.sethcoder.com/*.pem /gitrepos/gogs/custom/conf/ssl/
+
