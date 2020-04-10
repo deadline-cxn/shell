@@ -1,0 +1,6 @@
+ffmpeg -i "$1" -strict -2 -codec copy "${1%.*}.mp4"
+sudo chmod 777 "${1%.*}.mp4"
+
+
+
+

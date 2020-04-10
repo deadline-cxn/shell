@@ -1,0 +1,5 @@
+echo "create user $1@localhost identified by '$2';" | mysql
+echo "create database $1;" | mysql
+echo "grant all privileges on $1.* to $1@localhost identified by '$2';" | mysql
+
+
