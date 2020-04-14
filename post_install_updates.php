@@ -1,6 +1,6 @@
 <?php
 $hostfile_l="/etc/hosts";
-$hostfile=file_get_contents("./hosts");
+$hostfile=file_get_contents("/home/sparson/shell/data/hosts");
 $hosts=explode("\n",$hostfile);
 foreach($hosts as $h) {
   if(!empty($h)) {
