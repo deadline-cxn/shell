@@ -1,12 +1,45 @@
 #!/usr/bin/php
 <?php
-$x=scandir(getcwd());
-foreach($x as $file) {
-	if( $file != "." and $file != ".." )
-	if(is_dir($file)) {
-		$cmd="7z a $file.7z $file -mx9";
-		echo "$cmd ...\n";
-		exec($cmd);
-	}
+$delete_after=false;
+$options = getopt("d::");
+if(!empty($options['delete-after']) ||
+   !empty($options['d']) ) {
+    echo "Removing files after operation.\n";
+    $delete_after=true;
 }
+
+$cwd=getcwd();
+$x=scandir($cwd);
+echo "Working in $cwd\n";
+foreach($x as $file) {
+        if( $file != "."  and
+            $file != ".." and
+            substr($file,-3,3)!=".7z" and
+            is_dir($file)
+                      ) {
+            $cmd="7z a $file.7z $file -mx9";
+            echo "$cmd ...\n";
+            exec($cmd);
+            $sz=filesize("$file.7z");
+            if($sz > 0){
+                if($delete_after) {
+                    $cmd="rm -rf $cwd/$file";
+                    echo "$cmd ...\n";
+                    exec($cmd);
+                }
+            }
+        }
+}
+
+#!/usr/bin/php
+#<?php
+#$x=scandir(getcwd());
+#foreach($x as $file) {
+#	if( $file != "." and $file != ".." )
+#	if(is_dir($file)) {
+#		$cmd="7z a $file.7z $file -mx9";
+#		echo "$cmd ...\n";
+#		exec($cmd);
+#	}
+#}
 
