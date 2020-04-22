@@ -22,7 +22,7 @@ foreach($hosts as $h) {
       if($f) {
         fwrite($f,$t);
         fclose($f);
-      }
+      } 
     }
   }
 }
