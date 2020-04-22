@@ -3,15 +3,17 @@ $hostfile_l="/etc/hosts";
 $hostfile=file_get_contents("/home/sparson/shell/data/hosts");
 $hosts=explode("\n",$hostfile);
 foreach($hosts as $h) {
+  $h=str_replace("  "," ",$h);
+  $h=str_replace("   "," ",$h);
   if(!empty($h)) {
     if(stristr($h,"192")) {
-         $exp=explode(" ",$h);
-         $t=$exp[0];
-         $h=$exp[1];
+         list($t,$h)=explode(" ",$h);
          $t.=" $h\n";
     }
-    else $t="192.168.1.4 $h\n";
-echo "$t\n";
+    else {
+        $t="192.168.1.4 $h\n";
+    }
+    echo "$t";
     if(fif($h,$hostfile_l)) {
       echo "$h FOUND! (skipping)\n";
     }
@@ -26,7 +28,10 @@ echo "$t\n";
 }
 
 function fif($t,$f) {
-  $d=file_get_contents($f);
-  if(stristr($d,$t)) return true;
-  return false;
+    $d=file_get_contents($f);
+    if(stristr($d,$t)) {
+        echo "****** hosts entry:$t\n";
+        return true;
+    }
+    return false;
 }
