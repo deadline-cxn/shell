@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 $hostfile_l="/etc/hosts";
 $hostfile=file_get_contents("/home/sparson/shell/data/hosts");

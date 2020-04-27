@@ -1,4 +1,5 @@
 #!/bin/bash
+# Install common programs and stuff by Seth
 
 DISTRO=$(cat /etc/*rel* | grep "DISTRIB_ID=" | sed "s/DISTRIB_ID=//" | tr '[:upper:]' '[:lower:]')
 CODEBASE=$(cat /etc/*rel* | grep "DISTRIB_CODENAME=" | sed "s/DISTRIB_CODENAME=//")
@@ -40,7 +41,7 @@ function install {
     *)
       sudo apt-get install -y $1
       case "$?" in
-          100) 
+          100)
             echo "Not found"
             ;;
           0)
@@ -60,11 +61,6 @@ case "$DISTRO" in
      install xterm
      ;;
   *)
-     install python2.7
-     install python3.2
-     install python-setuptools
-     install python-dev
-     install lua5.2
 #     install toilet
      install screenfetch
 #     install apache2
@@ -81,6 +77,12 @@ case "$DISTRO" in
 esac
 
 # MISC NEW INSTALL PROGRAMS
+install php
+install python2.7
+install python3.2
+install python-setuptools
+install python-dev
+install lua5.2
 install screen
 install samba
 install guake
@@ -89,14 +91,13 @@ install mc
 install sshfs
 install gparted
 install gimp
-#install youtube-dl
 install nmap
-#install docky
 install htop
 install openssh-server
+
+#install youtube-dl
 #install phpmyadmin
 #install wkhtmltopdf
-
 #sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
 #sudo chmod a+rx /usr/local/bin/youtube-dl
 
