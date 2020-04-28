@@ -95,6 +95,9 @@ install nmap
 install htop
 install openssh-server
 
+install gcc
+install g++
+
 #install youtube-dl
 #install phpmyadmin
 #install wkhtmltopdf
