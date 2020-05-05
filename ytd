@@ -1,5 +1,6 @@
-youtube-dl -t $1
+youtube-dl -t -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $1
 sudo chown www-data:www-data *
 sudo chmod 775 *
+
 
 
